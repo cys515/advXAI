@@ -1,14 +1,6 @@
 
 --Scripts
 
-  --Models
-  
-    --LSTM  #LSTM with input cell attention
-    
-    --TCN
-    
-    --Transformer
-    
   --run  #generate explanation
   
   --processData  
@@ -22,5 +14,13 @@
   --attack  #PGD, PSO, GA optimization
   
   --Helper  #helper functions
+
+  --Models
+  
+    --LSTM  #LSTM with input cell attention
+    
+    --TCN
+    
+    --Transformer
   
 --Datasets  #cleaned data
