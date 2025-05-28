@@ -1,5 +1,5 @@
 
-Scripts
+Scripts(main branch)
 
   --run  #generate explanation
   
@@ -15,7 +15,7 @@ Scripts
   
   --Helper  #helper functions
 
-  --Models
+  --Models (Model branch)
   
     --LSTM  #LSTM with input cell attention
     
@@ -23,4 +23,4 @@ Scripts
     
     --Transformer
   
-Datasets  #cleaned data
+Datasets  #cleaned data (Dataset Branch)
