@@ -47,7 +47,7 @@ class Attack(object):
 		"""
 		create final adversial sample to a original sample
 		Args:
-			attack_method: [PSO | DE]
+			attack_method: [PSO | GA]
 			metric: One of "mass_center", "topK" or "random"
 			epsilon: Allowed maximum $ell_infty$ of perturbations, eg:8
 			iters: number of maximum allowed attack iterations
@@ -76,8 +76,8 @@ class Attack(object):
 		if attack_method == "PSO":
 			sample,criterion = self.PSO(metric, bounds, part, device, iters)
 		
-		if attack_method == "DE":			
-			sample, criterion = self.DE(metric, bounds, device, iters, popsize=10)
+		if attack_method == "GA":			
+			sample, criterion = self.GA(metric, bounds, device, iters, popsize=10)
 
 		if attack_method == "PGD":
 			sample = self.PGD(metric, bounds, device, iters, step = 0.005)
@@ -89,7 +89,7 @@ class Attack(object):
 		return sample.detach().cpu().numpy(), attr.detach().cpu().numpy()
 
 
-	def DE(self, metric, bounds, device, iters, popsize, mut=0.8, crossp=0.7):
+	def GA(self, metric, bounds, device, iters, popsize, mut=0.8, crossp=0.7):
 
 		adv_sample = self.test_flatten.repeat(popsize,1)
 		sample = self.test_flatten.clone()
